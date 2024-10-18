@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Registration Time</th>
+        <th>Last Login</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let user of Users">
+        <td>{{user.Id}}</td>
+        <td>{{user.Username}}</td>
+        <td>{{user.Email}}</td>
+        <td>{{user.RegistrationTime}}</td>
+        <td>{{user.LastLogin}}</td>
+        <td [ngStyle]="{'color': user.status === 'Confirmed' ? 'green' : 'red'}">{{user.status}}</td>
+    </tr>
+</table>
