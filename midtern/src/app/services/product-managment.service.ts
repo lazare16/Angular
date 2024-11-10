@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
-
+import { productsInCart } from '../interfaces/product-in-cart.interface';
 @Injectable({
   providedIn: 'root',
 })
@@ -84,16 +84,25 @@ export class ProductManagmentService {
     },
   ];
 
+  ShoppingCart: productsInCart[] = [];
+
   getProducts(): Product[] {
     return this.Products;
   }
 
-  deleteProduct(index: number): void {
-    this.Products.splice(index, 1);
-  }
+  addToCart(product: productsInCart) {
+    const cartItem = this.ShoppingCart.find(item => item.name === product.name);
 
-  addProduct(product: Product): void {
-    this.Products.push(product);
+    if (cartItem) {
+      cartItem.quantity += 1;
+    } else {
+      this.ShoppingCart.push({ ...product, quantity: 1 });
+    }
+    console.log(this.ShoppingCart);
+  }
+  
+  getShoppingCartProducts(): productsInCart[] {
+    return this.ShoppingCart;
   }
 
   constructor() {}

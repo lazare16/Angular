@@ -1,5 +1,6 @@
 <div class="card">
     <span class="new-tag" *ngIf="product.is_new">New</span>
+    <button class="add-to-cart-button" (click)="onAddToCart()">Add to cart</button>
     <img [src]="getImagePath(product.image)" alt="{{product.name}}">
 
     <div class="card-body">

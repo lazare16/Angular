@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../interfaces/product.interface';
 import { CommonModule } from '@angular/common';
 
@@ -7,13 +7,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.scss'
+  styleUrl: './product-card.component.scss',
 })
 export class ProductCardComponent {
- @Input() product!: Product;
+  @Input() product!: Product;
+  @Output() addToCartEvent = new EventEmitter<Product>();
 
- getImagePath(image: string): string {
-  const imagePath = `assets/${image}.png`;
-  return imagePath;
-}
+  getImagePath(image: string): string {
+    const imagePath = `assets/${image}.png`;
+    return imagePath;
+  }
+
+  onAddToCart() {
+    this.addToCartEvent.emit(this.product);
+  }
 }

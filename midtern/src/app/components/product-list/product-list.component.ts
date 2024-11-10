@@ -13,7 +13,14 @@ import { NgFor } from '@angular/common';
 export class ProductListComponent {
   products: Product[] = [];
 
-  constructor(productManagmentService: ProductManagmentService) {
-    this.products = productManagmentService.Products;
+ 
+
+  constructor(private productManagmentService: ProductManagmentService) {
+    this.products = this.productManagmentService.getProducts();
+  }
+
+  addToCart(product: Product) {
+    const productInCart = { ...product, quantity: 1 };
+    this.productManagmentService.addToCart(productInCart);
   }
 }
