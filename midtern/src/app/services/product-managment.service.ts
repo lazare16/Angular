@@ -110,5 +110,22 @@ export class ProductManagmentService {
     return this.ShoppingCart;
   }
 
+  increaseQuantity(product: productsInCart) {
+    const cartItem = this.ShoppingCart.find(item => item.name === product.name);
+    if(cartItem) {
+      cartItem.quantity += 1;
+    }
+  }
+
+  decreaseQuantity(product: productsInCart) {
+    const cartItem = this.ShoppingCart.find(item => item.name === product.name);
+    if(cartItem) {
+      cartItem.quantity -= 1;
+      if(cartItem.quantity === 0) {
+        this.removeFromCart(product);
+      }
+    }
+  }
+
   constructor() {}
 }

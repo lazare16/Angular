@@ -11,6 +11,8 @@ import { productsInCart } from '../../interfaces/product-in-cart.interface';
 export class ShoppingCartListItemComponent {
   @Input() productInCart!: productsInCart;
   @Output() removeFromCartEvent = new EventEmitter<productsInCart>();
+  @Output() increaseQuantityEvent = new EventEmitter<productsInCart>();
+  @Output() decreaseQuantityEvent = new EventEmitter<productsInCart>();
 
   getImagePath(image: string): string {
     const imagePath = `assets/${image}.png`;
@@ -21,4 +23,11 @@ export class ShoppingCartListItemComponent {
     this.removeFromCartEvent.emit(this.productInCart);
   }
   
+  onIncreaseQuantity() {
+    this.increaseQuantityEvent.emit(this.productInCart);
+  }
+
+  onDecreaseQuantity() {
+    this.decreaseQuantityEvent.emit(this.productInCart);
+  }
 }

@@ -10,9 +10,9 @@
         <button class="delete-button" (click)="onRemoveFromCart()"><img src="assets/icons/delete.svg" alt="" width="16px" height="16px"></button>
 
         <div class="quantity-action-buttons-wrapper">
-            <button class="quantity-button">-</button>
+            <button class="quantity-button" (click)="onDecreaseQuantity()">-</button>
             <span>{{productInCart.quantity}}</span>
-            <button class="quantity-button">+</button>
+            <button class="quantity-button" (click)="onIncreaseQuantity()">+</button>
         </div>
     </div>
 </div>

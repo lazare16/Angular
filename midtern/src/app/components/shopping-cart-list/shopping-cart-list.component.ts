@@ -23,5 +23,16 @@ export class ShoppingCartListComponent {
     this.productsInCart = this.productManagmentService.getShoppingCartProducts();
   }
   
+  increaseQuantity(product: productsInCart) {
+    this.productManagmentService.increaseQuantity(product);
+
+    this.productsInCart = this.productManagmentService.getShoppingCartProducts();
+  }
+
+  decreaseQuantity(product: productsInCart) {
+    this.productManagmentService.decreaseQuantity(product);
+
+    this.productsInCart = this.productManagmentService.getShoppingCartProducts();
+  }
   
 }
