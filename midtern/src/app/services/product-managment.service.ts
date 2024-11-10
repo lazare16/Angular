@@ -1,174 +1,100 @@
 import { Injectable } from '@angular/core';
-import { CardItem } from '../interfaces/cardItem.interface';
+import { Product } from '../interfaces/product.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductManagmentService {
-  CardItems: CardItem[] = [
+  Products: Product[] = [
     {
-      name: "Chair",
-      description: "Comfortable and stylish",
-      price: 120,
-      discount: 10,
-      discountPercentage: 8.33,
-      isNew: false,
-      imageName: "image1.png"
-      },
-      
-      {
-      name: "Table",
-      description: "Made of high-quality wood",
-      price: 250,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image2.png"
-      },
-      
-      {
-      name: "Sofa",
-      description: "Modern design",
-      price: 480,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: false,
-      imageName: "image3.png"
-      },
-      
-      {
-      name: "Bed",
-      description: "Classic and elegant",
-      price: 380,
-      discount: 50,
-      discountPercentage: 13.16,
-      isNew: false,
-      imageName: "image4.png"
-      },
-      
-      {
-      name: "Desk",
-      description: "Modern design",
-      price: 600,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image1.png"
-      },
-      
-      {
-      name: "Cabinet",
-      description: "Made of high-quality wood",
-      price: 720,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image2.png"
-      },
-      
-      {
-      name: "Shelf",
-      description: "Classic and elegant",
-      price: 280,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: false,
-      imageName: "image3.png"
-      },
-      
-      {
-      name: "Dresser",
-      description: "Comfortable and stylish",
-      price: 150,
-      discount: 20,
-      discountPercentage: 13.33,
-      isNew: false,
-      imageName: "image4.png"
-      },
-      
-      {
-      name: "Chair",
-      description: "Modern design",
-      price: 100,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image1.png"
-      },
-      
-      {
-      name: "Table",
-      description: "Classic and elegant",
-      price: 210,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image2.png"
-      },
-      
-      {
-      name: "Sofa",
-      description: "Comfortable and stylish",
-      price: 400,
-      discount: 30,
-      discountPercentage: 7.5,
-      isNew: false,
-      imageName: "image3.png"
-      },
-      
-      {
-      name: "Bed",
-      description: "Made of high-quality wood",
-      price: 520,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: false,
-      imageName: "image4.png"
-      },
-      
-      {
-      name: "Desk",
-      description: "Comfortable and stylish",
-      price: 550,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image1.png"
-      },
-      
-      {
-      name: "Cabinet",
-      description: "Modern design",
-      price: 680,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: true,
-      imageName: "image2.png"
-      },
-      
-      {
-      name: "Shelf",
-      description: "Made of high-quality wood",
-      price: 320,
-      discount: 40,
-      discountPercentage: 12.5,
-      isNew: false,
-      imageName: "image3.png"
-      },
-      
-      {
-      name: "Dresser",
-      description: "Classic and elegant",
-      price: 180,
-      discount: 0,
-      discountPercentage: 0,
-      isNew: false,
-      imageName: "image4.png"}
+      image: 'image1',
+      name: 'Gradient Graphic T-shirt',
+      price: '$145',
+      is_new: true,
+      is_discounted: false,
+      discount_percentage: null,
+    },
+    {
+      image: 'image2',
+      name: 'Polo with Tipping Details',
+      price: '$180',
+      is_new: true,
+      is_discounted: false,
+      discount_percentage: null,
+    },
+    {
+      image: 'image3',
+      name: 'Black Striped T-shirt',
+      price: '$120',
+      original_price: '$160',
+      is_new: false,
+      is_discounted: true,
+      discount_percentage: '30%',
+    },
+    {
+      image: 'image4',
+      name: 'Skinny Fit Jeans',
+      price: '$240',
+      original_price: '$260',
+      is_new: false,
+      is_discounted: true,
+      discount_percentage: '20%',
+    },
+    {
+      image: 'image5',
+      name: 'Checkered Shirt',
+      price: '$180',
+      is_new: true,
+      is_discounted: false,
+      discount_percentage: null,
+    },
+    {
+      image: 'image6',
+      name: 'Sleeve Striped T-shirt',
+      price: '$130',
+      original_price: '$160',
+      is_new: false,
+      is_discounted: true,
+      discount_percentage: '30%',
+    },
+    {
+      image: 'image7',
+      name: 'Vertical Striped Shirt',
+      price: '$212',
+      original_price: '$232',
+      is_new: false,
+      is_discounted: true,
+      discount_percentage: '20%',
+    },
+    {
+      image: 'image8',
+      name: 'Courage Graphic T-shirt',
+      price: '$145',
+      is_new: true,
+      is_discounted: false,
+      discount_percentage: null,
+    },
+    {
+      image: 'image9',
+      name: 'Loose Fit Bermuda Shorts',
+      price: '$80',
+      is_new: false,
+      is_discounted: false,
+      discount_percentage: null,
+    },
   ];
 
-  getCardItem(): CardItem[] {
-    return this.CardItems;
+  getProducts(): Product[] {
+    return this.Products;
   }
 
-  constructor() { }
+  deleteProduct(index: number): void {
+    this.Products.splice(index, 1);
+  }
+
+  addProduct(product: Product): void {
+    this.Products.push(product);
+  }
+
+  constructor() {}
 }

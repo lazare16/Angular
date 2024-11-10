@@ -1,0 +1,16 @@
+.card{
+    position: relative;
+    .new-tag{
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: #dbfac8;
+        color: #9dc982;
+        padding: 10px;
+        border-radius: 13px;
+       
+    }
+    img{
+        width: 100%;
+    }
+}
