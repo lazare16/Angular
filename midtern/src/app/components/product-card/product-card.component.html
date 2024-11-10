@@ -1,17 +1,20 @@
 <div class="card">
     <span class="new-tag" *ngIf="product.is_new">New</span>
-    <button class="add-to-cart-button" (click)="onAddToCart()">Add to cart</button>
+
     <img [src]="getImagePath(product.image)" alt="{{product.name}}">
 
     <div class="card-body">
-        <h5>{{product.name}}</h5>
-        <div [ngStyle]="product.original_price ? {'display': 'flex', 'gap': '8px'} : {}">
-            <h3>{{product.price}}</h3>
-            <h3 *ngIf="product.original_price !== undefined && product.original_price !== null" style="text-decoration: line-through;">
-                {{ product.original_price }}
-
-               
-            </h3>
+        <div>
+            <h5>{{product.name}}</h5>
+            <div [ngStyle]="product.original_price ? {'display': 'flex', 'gap': '8px'} : {}">
+                <h3>{{product.price}}</h3>
+                <h3 *ngIf="product.original_price !== undefined && product.original_price !== null"
+                    style="text-decoration: line-through;">
+                    {{ product.original_price }}
+                </h3>
+            </div>
         </div>
+        <button class="add-to-cart-button" (click)="onAddToCart()"><img src="assets/icons/basket-shopping-solid.svg"
+                alt="" width="16px" height="16px"></button>
     </div>
 </div>
