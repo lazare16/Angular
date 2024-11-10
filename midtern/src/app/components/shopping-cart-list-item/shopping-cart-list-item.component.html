@@ -1,1 +1,18 @@
-<p>shopping-cart-list-item works!</p>
+<div class="shopping-card-list-item-wrapper">
+    <img [src]="getImagePath(productInCart.image)" alt="{{productInCart.name}}" height="124px" width="auto">
+
+    <div class="shopping-card-list-item-content-wrapper">
+        <h4>{{productInCart.name}}</h4>
+        <h3>{{productInCart.price}}</h3>
+    </div>
+
+    <div class="shopping-card-list-item-actions-wrapper">
+        <button>delete</button>
+
+        <div class="quantity-action-buttons-wrapper">
+            <button>-</button>
+            <span>{{productInCart.quantity}}</span>
+            <button>+</button>
+        </div>
+    </div>
+</div>

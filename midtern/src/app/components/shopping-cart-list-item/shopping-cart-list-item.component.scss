@@ -1,0 +1,26 @@
+.shopping-card-list-item-wrapper {
+  display: flex;
+  align-items: flex-start;
+  height: 124px;
+
+ 
+
+  .shopping-card-list-item-content-wrapper {
+    margin-left: 8px;
+  }
+
+  .shopping-card-list-item-actions-wrapper {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+
+    .quantity-action-buttons-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,4 +1,5 @@
-<p>dsss</p>
-<div  *ngFor="let productInCart of productsInCart">
-    <h1>{{productInCart.name}}: {{productInCart.quantity}}</h1>
-</div>
+<div class="shopping-cart-wrapper" *ngIf="productsInCart && productsInCart.length > 0">
+    <div *ngFor="let productInCart of productsInCart">
+      <app-shopping-cart-list-item [productInCart]="productInCart"></app-shopping-cart-list-item>
+    </div>
+  </div>
