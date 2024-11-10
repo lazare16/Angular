@@ -100,6 +100,11 @@ export class ProductManagmentService {
     }
     console.log(this.ShoppingCart);
   }
+
+  removeFromCart(product: productsInCart) {
+    this.ShoppingCart = this.ShoppingCart.filter(item => item.name !== product.name);
+  }
+  
   
   getShoppingCartProducts(): productsInCart[] {
     return this.ShoppingCart;

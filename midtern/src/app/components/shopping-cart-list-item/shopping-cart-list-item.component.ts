@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { productsInCart } from '../../interfaces/product-in-cart.interface';
 
 @Component({
@@ -10,9 +10,15 @@ import { productsInCart } from '../../interfaces/product-in-cart.interface';
 })
 export class ShoppingCartListItemComponent {
   @Input() productInCart!: productsInCart;
+  @Output() removeFromCartEvent = new EventEmitter<productsInCart>();
 
   getImagePath(image: string): string {
     const imagePath = `assets/${image}.png`;
     return imagePath;
   }
+
+  onRemoveFromCart() {
+    this.removeFromCartEvent.emit(this.productInCart);
+  }
+  
 }

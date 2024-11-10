@@ -16,4 +16,12 @@ export class ShoppingCartListComponent {
   constructor(private productManagmentService: ProductManagmentService) { 
     this.productsInCart = this.productManagmentService.getShoppingCartProducts();
   }
+
+  removeFromCart(product: productsInCart) {
+    this.productManagmentService.removeFromCart(product);
+
+    this.productsInCart = this.productManagmentService.getShoppingCartProducts();
+  }
+  
+  
 }

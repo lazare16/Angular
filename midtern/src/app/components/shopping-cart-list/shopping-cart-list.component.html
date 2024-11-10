@@ -1,5 +1,5 @@
 <div class="shopping-cart-wrapper" *ngIf="productsInCart && productsInCart.length > 0">
     <div *ngFor="let productInCart of productsInCart" class="shopping-cart-item-wrapper">
-      <app-shopping-cart-list-item [productInCart]="productInCart"></app-shopping-cart-list-item>
+      <app-shopping-cart-list-item [productInCart]="productInCart" (removeFromCartEvent)="removeFromCart($event)"></app-shopping-cart-list-item>
     </div>
   </div>
